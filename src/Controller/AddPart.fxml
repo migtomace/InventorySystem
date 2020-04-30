@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.ToggleGroup?>
+<AnchorPane prefHeight="397.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="34.0" layoutY="25.0" prefHeight="26.0" prefWidth="114.0" text="Add Part">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="78.0" prefHeight="26.0" prefWidth="82.0" text="ID" />
+      <Label layoutX="74.0" layoutY="122.0" prefHeight="26.0" prefWidth="82.0" text="Name" />
+      <Label layoutX="74.0" layoutY="171.0" prefHeight="26.0" prefWidth="82.0" text="Inv" />
+      <Label layoutX="74.0" layoutY="215.0" prefHeight="26.0" prefWidth="82.0" text="Price" />
+      <Label layoutX="74.0" layoutY="259.0" prefHeight="26.0" prefWidth="82.0" text="Max" />
+      <Label layoutX="281.0" layoutY="258.0" prefHeight="26.0" prefWidth="82.0" text="Min" />
+      <TextField disable="true" layoutX="173.0" layoutY="78.0" prefHeight="26.0" prefWidth="134.0" promptText="Auto Gen - Disabled" fx:id="idTF">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField onAction="#onEnter" layoutX="173.0" layoutY="121.0" prefHeight="26.0" prefWidth="134.0" promptText="Part Name" fx:id="partNameTF">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+      <TextField onAction="#onEnter" layoutX="173.0" layoutY="170.0" prefHeight="26.0" prefWidth="134.0" promptText="Inv" fx:id="invTF">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+       <TextField onAction="#onEnter" layoutX="173.0" layoutY="214.0" prefHeight="26.0" prefWidth="134.0" promptText="Price" fx:id="priceTF">
+           <font>
+               <Font name="System Italic" size="12.0" />
+           </font>
+       </TextField>
+      <TextField onAction="#onEnter" layoutX="173.0" layoutY="258.0" prefHeight="26.0" prefWidth="70.0" promptText="Max" fx:id="maxTF">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+       <TextField onAction="#onEnter" layoutX="328.0" layoutY="258.0" prefHeight="26.0" prefWidth="70.0" promptText="Min" fx:id="minTF">
+           <font>
+               <Font name="System Italic" size="12.0" />
+           </font>
+       </TextField>
+       <TextField onAction="#onEnter" layoutX="172.0" layoutY="304.0" prefHeight="26.0" prefWidth="99.0" promptText="Comp Nm" fx:id="compNameTF" />
+       <Label fx:id="machL" layoutX="73.0" layoutY="305.0" prefHeight="26.0" prefWidth="99.0" text="Machine ID" visible="false" />
+       <Label fx:id="compNameL" layoutX="73.0" layoutY="305.0" prefHeight="26.0" prefWidth="99.0" text="Company Name"/>
+       <TextField onAction="#onEnter" layoutX="172.0" layoutY="304.0" prefHeight="26.0" prefWidth="99.0" promptText="Mach ID" fx:id="machTF" visible="false" />
+       <Button fx:id="saveBtn" onAction="#onEnter" layoutX="201.0" layoutY="344.0" mnemonicParsing="false" prefWidth="90.0" text="Save" />
+      <Button fx:id="cancelBtn" layoutX="311.0" layoutY="344.0" mnemonicParsing="false" onAction="#displayMainScreen" prefWidth="90.0" text="Cancel" />
+
+
+       <RadioButton onAction="#swapTF" layoutX="148.0" layoutY="30.0" mnemonicParsing="false" text="In-House" fx:id="inRadio">
+           <toggleGroup>
+               <ToggleGroup fx:id="group"/>
+           </toggleGroup>
+       </RadioButton>
+      <RadioButton onAction="#swapTF" layoutX="285.0" layoutY="30.0" mnemonicParsing="false" selected="true" text="Outsourced" fx:id="outRadio">
+          <toggleGroup>
+              <fx:reference source="group"/>
+          </toggleGroup>
+      </RadioButton>
+   </children>
+</AnchorPane>
